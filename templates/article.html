@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block page %}
+{% autoescape off %}
+{{ article.content }}
+{% endautoescape %}
+{% endblock %}

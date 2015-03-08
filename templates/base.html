@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+	<link href="{% static "hilltopviews.css" %}" rel="stylesheet">
+	<link rel="stylesheet" href="flexslider.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="jquery.flexslider.js"></script>
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+    <title>{% block title %}Newpaper Site{% endblock %}</title>
+</head>
+<body>
+	
+	<div class="row">
+	{% block navbar %}
+	{% include "standard_navbar.html" %}
+	{% endblock %}
+	</div>
+	
+<div id = "full page" class="container">
+	
+	<div id="masthead">
+	{% block masthead %}{% endblock %}
+	</div>
+	
+    <div id="page">
+    {% block page %}{% endblock %}
+    </div>
+	
+	<footer>
+	<div class="row">
+	{% block footer %}
+	{% include "footer.html" %}
+	{% endblock %}
+	</div>
+	</footer>
+	
+</div> <!-- end of full page -->
+</body>
+</html>

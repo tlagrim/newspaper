@@ -1,0 +1,16 @@
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+img.carousel{
+	max-height : 400px;
+	width : auto;
+	}
+	
+.carousel-block {
+  	position: static;	
+  	right: 15%;
+	bottom: 20px;
+	left: 15%;
+	z-index: 10;
+	text-align: center;	
