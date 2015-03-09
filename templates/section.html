@@ -2,13 +2,15 @@
 
 
 {% block title %}
-	<h1 class="text-muted"><a href="/">Hilltop Views </a><small>{{section.name}}</small></h1>	
+    <h1 class="text-muted"><a href="/">Hilltop Views </a>
+        <small>{{ section.name }}</small>
+    </h1>
 {% endblock %}
 
 {% block page %}
-<div class="row">
-	<div class="container-fluid well">
-		<h3 style="text-align: center;">{{ section.name }} Main stories </h3>
-	</div>
-</div>
+    <div class="row">
+        <div class="container-fluid well">
+            <h3 style="text-align: center;">{{ section.name }} Main stories </h3>
+        </div>
+    </div>
 {% endblock %}

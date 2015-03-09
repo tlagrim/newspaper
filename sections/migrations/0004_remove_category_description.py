@@ -5,14 +5,13 @@ from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
+  dependencies = [
+    ('sections', '0003_remove_collection_categories'),
+  ]
 
-    dependencies = [
-        ('sections', '0003_remove_collection_categories'),
-    ]
-
-    operations = [
-        migrations.RemoveField(
-            model_name='category',
-            name='description',
-        ),
-    ]
+  operations = [
+    migrations.RemoveField(
+      model_name='category',
+      name='description',
+    ),
+  ]
