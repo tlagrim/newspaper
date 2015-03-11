@@ -47,3 +47,44 @@ div.main-feature-box {
   font-size: 18px;
   line-height: 20px;
 }
+
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.wide {
+    width:100%;
+    height:200px;
+    background-image:url("https://mail.google.com/mail/u/0/?ui=2&ik=efd922a208&view=fimg&th=14c04701ac43f497&attid=0.1&disp=inline&realattid=f_i73hpr3r0&safe=1&attbid=ANGjdJ8IvV7GPEFZtdQOW5VmBXeQzxUoCyBnDORaasSK4j_honx-TGgFkhYUniuTWJJaSrAH-a_VEUjDIrqfFQbsvXzFIvnaohRdvIjonFr29tLlkT-q_hJw0N6a04c&ats=1426003611157&rm=14c04701ac43f497&zw&sz=w1250-h509");
+    background-size:cover;
+}
+
+.wide img {
+    width:100%;
+}
+
+.logo {
+    color:#000000;
+    font-weight:800;
+    font-size:14pt;
+    padding:5px;
+    text-align:center;
+}
+
+.line {
+    padding-top:20px;
+    white-space:no-wrap;
+    overflow:hidden;
+    text-align:center;
+    text-color: #000000;
+}
