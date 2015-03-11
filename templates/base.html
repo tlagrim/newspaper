@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load staticfiles %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
-    <link href="{% static "hilltopviews.css" %}" rel="stylesheet">
-    <link rel="stylesheet" href="flexslider.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script src="jquery.flexslider.js"></script>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
+	{% load staticfiles %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="{% static "flexslider/flexslider.css" %}" type="text/css">
+	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "hilltopviews.css" %}" rel="stylesheet">
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	
+	<script src="{% static "flexslider/jquery.flexslider.js" %}"></script>
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+	  $(window).load(function() {
+	    $('.flexslider').flexslider();
+	  });
+	</script>
+	
     <title>{% block title %}Newpaper Site{% endblock %}</title>
 </head>
 <body>
-
-<div class="row">
-    {% block navbar %}
-        {% include "standard_navbar.html" %}
-    {% endblock %}
-</div>
-
-<div id="full page" class="container">
-
-    <div id="masthead">
-        {% block masthead %}{% endblock %}
-    </div>
-
+	<header id="masthead"> 
+	{% block masthead %}
+			{% include "navbar-2.html" %} 
+	{% endblock %}
+	</header>	
+	
+<div id = "full page" class="container">
+	
     <div id="page">
-        {% block page %}{% endblock %}
+    {% block page %}{% endblock %}
     </div>
-
-    <footer>
-        <div class="row">
-            {% block footer %}
-                {% include "footer.html" %}
-            {% endblock %}
-        </div>
-    </footer>
-
-</div>
-<!-- end of full page -->
+	
+	<footer>
+	<div class="row">
+	{% block footer %}
+	{% include "footer.html" %}
+	{% endblock %}
+	</div>
+	</footer>
+	
+</div> <!-- end of full page -->
 </body>
 </html>
