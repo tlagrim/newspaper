@@ -1,16 +1,49 @@
-.carousel-inner > .item > img {
-    margin: 0 auto;
+.thumbnail-featured{
+	height : 200px;
+	width : auto;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
-img.carousel {
-    max-height: 400px;
-    width: auto;
+.thumbnail{
+	height : 100px;
+	width : auto;
 }
 
-.carousel-block {
-    position: static;
-    right: 15%;
-    bottom: 20px;
-    left: 15%;
-    z-index: 10;
-    text-align: center;
+div.main-feature-box {
+   background-color: #ffffff;
+   opacity: 0.6;
+   filter: alpha(opacity=60); /* For IE8 and earlier */
+	position:absolute;
+	z-index : 1;
+	left:0;
+   	right:0;
+	bottom:0;
+	margin-left : auto;
+	margin-right : auto;
+	text-align : center
+}
+
+#masthead {
+	position: fixed;
+	  top: 0;
+		left:0;
+		right:0;
+	  z-index: 999;
+	  height: 80px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
+
+.navbar-brand-hill {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
