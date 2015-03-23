@@ -1,47 +1,20 @@
+{% for article, section in featured_articles %}
 <div class="media panel panel-default">
     <div class="panel-body">
         <div class="media-left">
-            <a href="">
+            <a href="articles/{{ article.url }}">
                 <img class="media-object thumbnail-featured"
                      src="http://www.nasa.gov/sites/default/files/thumbnails/image/16589873002_21c846154d_o.jpg">
             </a>
         </div>
         <div class="media-body">
-            <h3 class="media-heading">Here is the top Life and Arts Story</h3>
-
-            <p>Category</p>
-        </div>
-    </div>
-</div>
-
-<div class="media panel panel-default">
-    <div class="panel-body">
-        <div class="media-left">
-            <a href="">
-                <img class="media-object thumbnail-featured"
-                     src="http://www.nasa.gov/sites/default/files/thumbnails/image/16589873002_21c846154d_o.jpg">
+            <a href="articles/{{ article.url }}">
+                <h2>{{ article.title }}</h2>
+            </a>
+            <a href="/{{ section.url }}">
+                <h3>{{ section.name }}</h3>
             </a>
         </div>
-        <div class="media-body">
-            <h3 class="media-heading">Here is the top Sports Story</h3>
-
-            <p>Category</p>
-        </div>
     </div>
 </div>
-
-<div class="media panel panel-default">
-    <div class="panel-body">
-        <div class="media-left">
-            <a href="">
-                <img class="media-object thumbnail-featured"
-                     src="http://www.nasa.gov/sites/default/files/thumbnails/image/16589873002_21c846154d_o.jpg">
-            </a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">Here is the top Viewpoints Story</h3>
-
-            <p>Category</p>
-        </div>
-    </div>
-</div>
+{% endfor %}

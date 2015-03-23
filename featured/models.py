@@ -8,6 +8,10 @@ class MainStory(models.Model):
     # appear in. TODO: look into django-admin-orderable (something like that)
     order = models.IntegerField()
 
+    class Meta:
+        ordering = ['order']
+        verbose_name_plural = 'Main stories'
+
 # Featured articles are the article from each section which appear either at the top of the section page or
 # in the sections display on the homepage. There should only ever be one instance of this model for each section.
 # TODO: look into the Django models.clean() method for enforcing only one instance of this model
