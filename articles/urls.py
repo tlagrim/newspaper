@@ -4,4 +4,4 @@ from articles import views
 
 urlpatterns = patterns('',
                        url(r'(?P<article_url>[\w-]+)', views.article_page),
-)
+                       )
