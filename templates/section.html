@@ -7,8 +7,26 @@
 
 {% block page %}
     <div class="row">
-        <div class="container-fluid well">
-            <h3 style="text-align: center;">{{ section.name }} Main stories </h3>
+        <div class="container well">
+            <h3 style="text-align: center;">{{ section.name }} Main story </h3>
         </div>
     </div>
+
+<div class="row">
+ <div class="media panel panel-default">
+    <div class="panel-body">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object thumbnail-featured"
+                     src="http://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg">
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="#">
+                <h2>Article Title</h2>
+            </a>
+        </div>
+    </div>
+</div>  
+</div>
 {% endblock %}

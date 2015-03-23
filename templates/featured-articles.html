@@ -9,11 +9,14 @@
         </div>
         <div class="media-body">
             <a href="articles/{{ article.url }}">
-                <h2>{{ article.title }}</h2>
+                <h2 class="media-heading">{{ article.title }}</h2>
             </a>
             <a href="/{{ section.url }}">
-                <h3>{{ section.name }}</h3>
+                <h4>{{ section.name }}</h4>
             </a>
+			  <p>{{article.preview}}</p>
+			  <!-- TODO figure out how to iterate through the authors field, manytomany -->
+			  <p>By 'Author name'</p>
         </div>
     </div>
 </div>
