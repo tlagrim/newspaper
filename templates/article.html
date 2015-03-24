@@ -1,7 +1,76 @@
 {% extends 'base.html' %}
 
 {% block page %}
-    {% autoescape off %}
-        {{ article.content }}
-    {% endautoescape %}
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+
+                <body class="content">
+                <!--<div class="panel panel-default">-->
+                <div class="panel-heading"><span style="font-size:30px " style="font-family:Univers LT Std"><strong> {{ article.title }}</strong></span><br><p><em><span style="font-size:18px"><span style="color:#A9A9A9">By </span><a href="http://instagram.com/tubbytj"><span style="color:#A9A9A9">Timothy J. Lagrimas</span></a><span style="color:#A9A9A9">, March 10, 2015</span></span></em></p>
+
+                </div>
+                {% autoescape off %}
+                    {{ article.content }}
+                {% endautoescape %}
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <!--let's put a side article in here-->
+                    <p><a href="http://www.shipleydonutsaustin.com/"><img alt="" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/11046922_10204585311807585_8651460894367964602_n.jpg?oh=a8f48f0bac0c10d758a5847830ce8bd9&amp;oe=558C21C7&amp;__gda__=1434205090_1f3080e3f0d5022a8dfd22442fc9d5a8" style="height:142px; width:300px" /></a></p>
+
+
+
+                    <!-- /.input-group -->
+                </div>
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <!--let's put another article or ad possibly?-->
+
+                    <p><a href="http://www.hopdoddy.com/"><img alt="" src="https://scontent-ord.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/21811_10204585726257946_2003822887546160993_n.jpg?oh=a097b5c4ca20efc31483063fb9481f3b&amp;oe=5570DA5D" style="height:284px; width:300px" /></a></p>
+
+                    <!-- /.row -->
+                </div>
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <!-- let's put yet some other thing in here i'm really tired. -->
+
+                    <p><a href="http://www.shipleydonutsaustin.com/"><img alt="" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/11046922_10204585311807585_8651460894367964602_n.jpg?oh=a8f48f0bac0c10d758a5847830ce8bd9&amp;oe=558C21C7&amp;__gda__=1434205090_1f3080e3f0d5022a8dfd22442fc9d5a8" style="height:142px; width:300px" /></a></p>
+
+
+                </div>
+
+                <div class="well">
+                    <!--let's put another article or ad possibly?-->
+
+                    <p><a href="http://www.hopdoddy.com/"><img alt="" src="https://scontent-ord.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/21811_10204585726257946_2003822887546160993_n.jpg?oh=a097b5c4ca20efc31483063fb9481f3b&amp;oe=5570DA5D" style="height:284px; width:300px" /></a></p>
+
+
+                    <!-- /.row -->
+                </div>
+
+                <div class="well">
+                    <!-- let's put yet some other thing in here i'm really tired. -->
+
+
+                    <p><a href="http://www.shipleydonutsaustin.com/"><img alt="" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/11046922_10204585311807585_8651460894367964602_n.jpg?oh=a8f48f0bac0c10d758a5847830ce8bd9&amp;oe=558C21C7&amp;__gda__=1434205090_1f3080e3f0d5022a8dfd22442fc9d5a8" style="height:142px; width:300px" /></a></p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
 {% endblock %}
