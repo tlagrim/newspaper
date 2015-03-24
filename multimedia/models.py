@@ -6,6 +6,6 @@ class Photo(models.Model):
     title = models.CharField(max_length=50)
     date_added = models.DateField()
     photographer = models.ForeignKey('contributors.Contributor')
-    section = models.ForeignKey('sections.Section', blank=True)
+    section = models.ForeignKey('sections.Section', null=True, blank=True)
     categories = models.ManyToManyField('sections.Category', blank=True)
-    # add link to actual photo
+    image = models.ImageField(upload_to='photos/')
