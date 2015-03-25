@@ -12,14 +12,30 @@
 
                 <body class="content">
                 <!--<div class="panel panel-default">-->
-                <div class="panel-heading"><span style="font-size:30px " style="font-family:Univers LT Std"><strong> {{ article.title }}</strong></span><br><p><em><span style="font-size:18px"><span style="color:#A9A9A9">By </span><a href="http://instagram.com/tubbytj"><span style="color:#A9A9A9">Timothy J. Lagrimas</span></a><span style="color:#A9A9A9">, March 10, 2015</span></span></em></p>
+                <div class="panel-heading"><span style="font-size:30px " style="font-family:Univers LT Std"><strong> {{ article.title }}</strong></span><br><p><em><span style="font-size:18px"><span style="color:#A9A9A9">By </span><span style="color:#A9A9A9">
+                    {%  for contributor in article.authors.all %}
+                        <a href="/contributors/{{ contributor.twitter }}">{{ contributor }}</a>
+                    {% endfor %}
+                </span><span style="color:#A9A9A9">, March 10, 2015</span></span></em></p>
 
                 </div>
                 {% autoescape off %}
                     {{ article.content }}
                 {% endautoescape %}
-            </div>
+                {%  for contributor in article.authors.all %}
+                <div class="media panel panel-default">
+                    <div class="panel-body">
+                        <div class="media-left">
+                             <a href="articles/{{ contributor.image }}"><img class="media-object thumbnail-featured" src="{{ contributor.image }}"></a>
+                        </div>
+                        <div class="media-body">
+                             <a href="/contributors/{{ contributor.twitter }}">{{ contributor }}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
 
+            </div>
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
                 <!-- Blog Search Well -->
