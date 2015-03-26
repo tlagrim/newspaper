@@ -7,7 +7,8 @@ class MainStory(models.Model):
     # order field is a bad hack to properly order the articles. This way, editors can choose the order the articles
     # appear in. TODO: look into django-admin-orderable (something like that)
     order = models.IntegerField()
-
+    def __str__(self):
+        return "Main Story number " + str(self.order)
     class Meta:
         ordering = ['order']
         verbose_name_plural = 'Main stories'
@@ -19,6 +20,8 @@ class MainStory(models.Model):
 class FeaturedArticle(models.Model):
     article = models.ForeignKey('articles.Article', related_name='+')
     section = models.ForeignKey('sections.Section')
+    def __str__(self):
+        return self.section.name + " Featured Article"
 
 # # PinnedArticles is plural because there will only be one instance of this model
 # # and it will contain all of the pinned articles

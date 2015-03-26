@@ -9,3 +9,5 @@ class Photo(models.Model):
     section = models.ForeignKey('sections.Section', null=True, blank=True)
     categories = models.ManyToManyField('sections.Category', blank=True)
     image = models.ImageField(upload_to='photos/')
+    def __str__(self):
+        return self.title

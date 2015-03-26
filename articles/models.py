@@ -13,5 +13,9 @@ class Article(models.Model):
     section = models.ForeignKey('sections.Section')
     main_category = models.ForeignKey('sections.Category', related_name='+')
     categories = models.ManyToManyField('sections.Category', blank=True)
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return "/articles/" + self.url
