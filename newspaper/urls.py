@@ -4,6 +4,7 @@ from django.contrib import admin
 
 import homepage.views
 import sections.views
+import newspaper.views
 from django.views.generic import TemplateView
 
 
@@ -17,7 +18,9 @@ urlpatterns = patterns('',
                        url(r'^admin', include(admin.site.urls)),
                        url(r'^articles/', include('articles.urls')),
                        url(r'^contributors/', include('contributors.urls')),
-                       url(r'^contact', TemplateView.as_view(template_name="contact.html") ),
+                       url(r'^contact', TemplateView.as_view(template_name="contact.html")),
+                       url(r'^advertise', TemplateView.as_view(template_name="advertise.html")),
+                       url(r'^about', newspaper.views.about_page),
                        url(r'^(?P<section_url>[\w-]+)', sections.views.section_page, name='section_page'),
                        #hardcode sections into here
                        )
