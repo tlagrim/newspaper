@@ -6,7 +6,7 @@ class Article(models.Model):
     title = models.CharField(max_length=50)
     url = models.SlugField(db_index=True)
     image = models.URLField() 
-    content = models.TextField()
+    content = models.TextField(verbose_name='')
     ready = models.BooleanField(default=False)
     preview = models.CharField(max_length=200)
     date_published = models.DateField()
