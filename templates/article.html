@@ -9,7 +9,7 @@
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
                 <!-- Blog Post -->
-
+                {% if user.is_authenticated or article.ready %}
                 <body class="content">
                 <!--<div class="panel panel-default">-->
                 <div class="panel-heading"><span style="font-size:30px " style="font-family:Univers LT Std"><strong> {{ article.title }}</strong></span><br><p><em><span style="font-size:18px"><span style="color:#A9A9A9">By </span><span style="color:#A9A9A9">
@@ -22,6 +22,7 @@
                 {% autoescape off %}
                     {{ article.content }}
                 {% endautoescape %}
+
                 {%  for contributor in article.authors.all %}
                 <div class="media panel panel-default">
                     <div class="panel-body">
@@ -34,6 +35,9 @@
                     </div>
                 </div>
                 {% endfor %}
+                {% else %}
+                    <h1>Not Authenticated</h1>
+                {% endif %}
 
             </div>
             <!-- Blog Sidebar Widgets Column -->

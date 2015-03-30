@@ -7,6 +7,7 @@ class Article(models.Model):
     url = models.SlugField(db_index=True)
     image = models.URLField() 
     content = models.TextField()
+    ready = models.BooleanField(default=False)
     preview = models.CharField(max_length=200)
     date_published = models.DateField()
     authors = models.ManyToManyField('contributors.Contributor')
