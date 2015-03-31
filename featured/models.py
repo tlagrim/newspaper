@@ -3,7 +3,7 @@ from django.db import models
 
 # Main stories are the articles (stories) which appear in the Flexslider on the homepage
 class MainStory(models.Model):
-    article = models.ForeignKey('articles.Article', related_name='+')
+    article = models.ForeignKey('articles.Article', related_name='+', limit_choices_to={'ready': True})
     # order field is a bad hack to properly order the articles. This way, editors can choose the order the articles
     # appear in. TODO: look into django-admin-orderable (something like that)
     order = models.IntegerField()
@@ -18,7 +18,7 @@ class MainStory(models.Model):
 # TODO: look into the Django models.clean() method for enforcing only one instance of this model
 # TODO: (ie) http://stackoverflow.com/questions/2138408/limit-number-of-model-instances-to-be-created-django
 class FeaturedArticle(models.Model):
-    article = models.ForeignKey('articles.Article', related_name='+')
+    article = models.ForeignKey('articles.Article', related_name='+', limit_choices_to={'ready': True})
     section = models.ForeignKey('sections.Section')
     def __str__(self):
         return self.section.name + " Featured Article"
