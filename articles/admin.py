@@ -9,7 +9,7 @@ from articles.models import Article
 
 class ArticleAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_published'
-    list_display = ('title', 'section', 'main_category', 'date_published')
+    list_display = ('title', 'section', 'main_category', 'date_published', 'ready')
     list_filter = ['date_published', 'section', 'main_category']
     filter_horizontal = ['authors', 'categories']
     formfield_overrides = {models.TextField: {'widget': forms.Textarea(attrs={'class': 'ckeditor'})}, }
