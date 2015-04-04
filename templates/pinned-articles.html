@@ -1,0 +1,16 @@
+{% for row in pinned_articles %}
+    <div class="container-fluid col-md-4">
+    {% for article in row %}
+        <div class="container-fluid well">
+            <a href="articles/{{ article.url }}">
+                <div class="media-left">
+                    <img class="media-object thumbnail-featured" style="width:40% height:40%" src="{{ article.image }}">
+                </div>
+                <div class="media-body">
+                    <h4 style="text-align: center;">{{ article.title }}</h4>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+{% endfor %}

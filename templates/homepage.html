@@ -27,51 +27,8 @@
         <!-- /.container -->
     </div> <!-- /.row -->
 
-    <div class="row">
-        <div class="container-fluid col-md-4">
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-        </div>
-        <div class="container-fluid col-md-4">
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-        </div>
-        <div class="container-fluid col-md-4">
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-
-            <div class="container-fluid well">
-                <h1 style="text-align: center;">Spot</h1>
-            </div>
-        </div>
-    </div>
+    {% block pinned-stories %}
+        {% include "pinned-articles.html" %}
+    {% endblock pinned-stories %}
 
 {% endblock %}
