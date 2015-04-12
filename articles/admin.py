@@ -15,6 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     filter_horizontal = ['authors', 'categories']
     list_per_page = 19
     list_editable = ['ready', 'publish_date']
+    search_fields = ('title', 'categories', 'main_category', 'content')
 
     formfield_overrides = {models.TextField: {'widget': forms.Textarea(attrs={'class': 'ckeditor'})}, }
 
