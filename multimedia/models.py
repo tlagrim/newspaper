@@ -8,6 +8,7 @@ class Photo(models.Model):
     photographer = models.ForeignKey('contributors.Contributor')
     section = models.ForeignKey('sections.Section', null=True, blank=True)
     categories = models.ManyToManyField('sections.Category', blank=True)
-    image = models.ImageField(upload_to='photos/')
+    image = models.ImageField(upload_to='photos/%Y/%m/%d')
+
     def __str__(self):
         return self.title
