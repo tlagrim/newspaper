@@ -3,5 +3,5 @@
 
 *.xml
 /__pycache__/
-.idea
-.pyc
+*.idea
+*.pyc
