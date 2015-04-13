@@ -55,9 +55,17 @@ div.main-feature-box {
  */
 
 body {
+    background-color:#FAFAFA;
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+body h2, h3, h4{
+        color: grey;
+        }
+
+.content{
+        margin-bottom:2%;
+}
 
 .wide {
     width: 100%;
