@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load staticfiles %}
     <meta charset="utf-8">
@@ -9,7 +10,9 @@
     <link rel="stylesheet" href="{% static "flexslider/flexslider.css" %}" type="text/css">
     <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
     <link href="{% static "hilltopviews.css" %}" rel="stylesheet">
+    <link href="{% static "footer.css" %}" rel="stylesheet">
 
+    <link href="{% static "UniversLTStd-LightUltraCn.css" %}" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -24,6 +27,7 @@
 
     <title>{% block title %}Newpaper Site{% endblock %}</title>
 </head>
+
 <body>
 <header>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -68,14 +72,14 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-2 line">
+        <div class="col-sm-3 line">
             <hr>
         </div>
-        <div class="col-sm-8 logo">
-	        <span style="color:#000000">                                                                                                                                     
-	          <span style="font-family:Univers LT Std">                                                                                                                    
+        <div class="col-sm-6 logo">
+	        <span style="color:#000000">
+	          <span style="font-family:UniversLTStd-LightUltraCn">
 	            <big>                                                                                                                                                    
-	              <span style="font-size:48px">                                                                                                                       
+	              <span style="font-size:100px">
 	                <strong>
                         {% block page_title %}HILLTOP VIEWS{% endblock %}
                     </strong>
@@ -84,7 +88,7 @@
 	          </span>                                                                                                                                                      
 	        </span>
         </div>
-        <div class="col-sm-2 line">
+        <div class="col-sm-3 line">
             <hr>
         </div>
     </div>
@@ -93,11 +97,11 @@
 <div id="full page" class="container">
 
     <div id="page">
-	<div class="row">
-        {% block page %}{% endblock %}
-	</div>
+        <div class="row">
+            {% block page %}{% endblock %}
+        </div>
     </div>
-	<div></div>
+    <div></div>
 
     <footer>
         <div class="row">
@@ -110,4 +114,5 @@
 </div>
 <!-- end of full page -->
 </body>
+
 </html>
