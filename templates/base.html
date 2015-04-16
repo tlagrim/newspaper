@@ -25,6 +25,7 @@
         });
     </script>
 
+
     <title>{% block title %}Newpaper Site{% endblock %}</title>
 </head>
 
@@ -77,8 +78,8 @@
         </div>
         <div class="col-sm-6 logo">
 	        <span style="color:#000000">
-	          <span style="font-family:UniversLTStd-LightUltraCn">
-	            <big>                                                                                                                                                    
+	          <span style="font-family:UniversLTStd-LightUltraCn_gdi">
+	            <big>
 	              <span style="font-size:100px">
 	                <strong>
                         {% block page_title %}HILLTOP VIEWS{% endblock %}
@@ -103,16 +104,19 @@
     </div>
     <div></div>
 
-    <footer>
-        <div class="row">
-            {% block footer %}
-                {% include "footer.html" %}
-            {% endblock %}
-        </div>
-    </footer>
+
 
 </div>
 <!-- end of full page -->
+
 </body>
+
+<footer>
+    <div class="row">
+        {% block footer %}
+            {% include "footer.html" %}
+        {% endblock %}
+    </div>
+</footer>
 
 </html>
