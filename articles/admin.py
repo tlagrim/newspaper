@@ -22,5 +22,7 @@ class ArticleAdmin(admin.ModelAdmin):
     class Media:
         js = ('ckeditor/ckeditor.js',)
 
+        # try to implement an inline article editor for ckeditor
+
 
 admin.site.register(Article, ArticleAdmin)

@@ -15,6 +15,9 @@ class Article(models.Model):
     main_category = models.ForeignKey('sections.Category', related_name='+')
     categories = models.ManyToManyField('sections.Category', blank=True)
 
+    # things to do
+    # add a view count field that will updated each time the article is viewed (used for advertisement)
+
     def __str__(self):
         return self.title
 

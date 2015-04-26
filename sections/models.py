@@ -5,7 +5,8 @@ from django.db import models
 class Section(models.Model):
     name = models.CharField(max_length=20)
     url = models.SlugField(db_index=True)
-    # add a second editor
+
+
     def __str__(self):
         return self.name
 
