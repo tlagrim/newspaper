@@ -30,6 +30,16 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#for email, python has a built in SMTP server for testing
+
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 25
+#EMAIL_HOST_USER = 'hilltopviewscms@gmail.com'
+#EMAIL_HOST_PASSWORD = ''
+#DEFAULT_FROM_EMAIL = 'ktague@gmail.com'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 # Application definition
 
