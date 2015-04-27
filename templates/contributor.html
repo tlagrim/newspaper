@@ -6,59 +6,7 @@
 
     <!-- Page Content -->
     <div class="container">
-        <div class="row">
-            <!-- Contibutor information t Content Column -->
-            <div class="col-lg-8">
-                <!-- Blog Post -->
-                {% if user.is_authenticated or contributor.ready %}
-                <body class="content">
-                <!--<div class="panel panel-default">-->
-                <div class="panel-heading"><span style="font-size:30px " style="font-family:Univers LT Std"><strong> {{ contributor.name }}</strong></span><br><p><em><span style="font-size:18px"><span style="color:#A9A9A9">By </span><span style="color:#A9A9A9">
-                    {%  for contributor in article.authors.all %}
-                        <a href="/contributors/{{ contributor.twitter }}">{{ contributor }}</a>
-                    {% endfor %}
-                </span><span style="color:#A9A9A9">, date </span></span></em></p>
-
-                </div>
-                {% autoescape off %}
-                    {{ article.content }}
-                {% endautoescape %}
-
-                
-                {%  for contributor in article.authors.all %}
-                <div class="media panel panel-default">
-                 
-
-            </div>
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-                <!-- Blog Search Well -->
-                <div class="well">
-
-
-
-                    <!-- /.input-group -->
-                </div>
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <!--Writer Info?-->
-
-
-                    <!-- /.row -->
-                </div>
-
-
-
-
-
-
-
-
-                </div>
-
-            </div>
-        </div>
-        <!-- /.row -->
+    
 
     </div>
     <!-- /.container -->
