@@ -13,13 +13,13 @@ class Contributor(models.Model):
     first_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50)
-    suffix = models.CharField(max_length=5)
-    image = models.URLField() 
+    suffix = models.CharField(max_length=5, blank=True)
+    image = models.URLField(blank=True)
     twitter = models.SlugField(db_index=True)
     email = models.EmailField(max_length=75)
-    bio = models.TextField()
+    bio = models.TextField(blank=True)
     position = models.ForeignKey('Position')
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
     class_standing = models.CharField(max_length=5, choices=CLASS_STANDING_OPTIONS, blank=True)
 
     def __str__(self):

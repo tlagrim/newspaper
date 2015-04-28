@@ -22,6 +22,7 @@ STATICFILES_DIRS = (
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'bi#(m^d1xas7#7iqyetqip1kz%^)k9g3a!cx#pf5*@eq7apc!9'
+# don't show on the github
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
