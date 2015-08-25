@@ -167,11 +167,11 @@ html[xmlns] .flexslider .slides {
 }
 
 .flex-direction-nav .flex-prev {
-    left: -50px;
+    left: 70px;
 }
 
 .flex-direction-nav .flex-next {
-    right: -50px;
+    right: 70px;
     text-align: right;
 }
 
