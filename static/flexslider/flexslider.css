@@ -80,7 +80,7 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
-    margin: 0 0 40px;
+    margin: 0 0 30px;
     /*background: #ffffff;*/
     opacity: 1;
     position: relative;
@@ -251,7 +251,7 @@ html[xmlns] .flexslider .slides {
 .flex-control-nav {
     width: 100%;
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     text-align: center;
 }
 

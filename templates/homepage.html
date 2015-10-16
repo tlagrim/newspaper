@@ -2,6 +2,7 @@
 
 {% block page %}
 
+
     <div class="row">
         <div class="container-fluid">
             {% block main_stories %}{% include "main-stories.html" %}{% endblock %}
@@ -20,16 +21,16 @@
         </div>
 
         <div class="container-fluid col-md-3">
+        <h4 class="latest-articles-title">The Latest</h4>
             {% block homepage-ads %}
                 <a href="https://www.apple.com">
-                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/iphone3g.jpg" height="510" width="240" style="margin-bottom: 10px;">apples
+                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/iphone3g.jpg" height="510" width="240" style="margin-bottom: 10px;"></a>
                 <a href="http://www.camper.com/en_US">
-                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/camper.jpg" height="421" width="240">
+                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/camper.jpg" height="421" width="240"></a>
             {% endblock homepage-ads %}
         </div>
         <!-- /.container -->
     </div> <!-- /.row -->
-
     {% block pinned-stories %}
         {% include "pinned-articles.html" %}
     {% endblock pinned-stories %}
