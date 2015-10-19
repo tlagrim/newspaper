@@ -21,11 +21,16 @@ def homepage(request):
     # split pinned articles into rows
     pinned_articles = list(chunk([Article.objects.get(pk=i) for i in pinned_article_ids], 3))
 
+
+    # latest articles
+    latest_articles = Article.objects.order_by('-publish_date')[:5]
+
     # build context
     template_context = {}
     template_context['main_stories'] = main_articles
     template_context['featured_articles'] = featured_articles
     template_context['pinned_articles'] = pinned_articles
+    template_context['latest_articles'] = latest_articles
 
     return render(request, 'homepage.html', template_context)
 

@@ -1,0 +1,12 @@
+{% for article in latest_articles %}
+<div class="media panel panel-default">
+    <div class="panel-body">
+        <div class="media-body">
+            <a href="articles/{{ article.url }}">
+                <h4>{{ article.title }}</h4>
+            </a>
+			  <p>{{article.preview}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}

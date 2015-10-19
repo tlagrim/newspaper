@@ -34,7 +34,8 @@
 <body>
  <div id="body-wrapper">
   <header>
-    <div class="row" style="background-image: url(http://oi60.tinypic.com/5lo1uo.jpg); background-size: 100%; background-position: 50% 0%;">
+      <!--div class="row" style="background-image: url(http://oi60.tinypic.com/5lo1uo.jpg); background-size: 100%; background-position: 50% 0%;"-->
+    <div class="row" style="background-image: url(http://oi60.tinypic.com/5lo1uo.jpg); background-size: cover">
         <div class="col-sm-3 line">
             <hr>
         </div>
@@ -115,7 +116,7 @@
             <div class="row">
                 {% block footer %}
                     {% include "footer.html" %}
-                {% endblock %}
+                {% endblock footer %}
             </div>
         </footer>
     </div>

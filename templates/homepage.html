@@ -5,13 +5,13 @@
 
     <div class="row">
         <div class="container-fluid">
-            {% block main_stories %}{% include "main-stories.html" %}{% endblock %}
+            {% block main_stories %}{% include "main-stories.html" %}{% endblock main_stories %}
         </div>
     </div>
 
     <div class="row">
         <div class="container-fluid col-md-6">
-            {% block featured %}{% include "featured-articles.html" %}{% endblock %}
+            {% block featured %}{% include "featured-articles.html" %}{% endblock featured %}
         </div>
 
         <div class="container-fluid col-md-3">
@@ -22,13 +22,17 @@
 
         <div class="container-fluid col-md-3">
         <h4 class="latest-articles-title">The Latest</h4>
-            {% block homepage-ads %}
-                <a href="https://www.apple.com">
-                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/iphone3g.jpg" height="510" width="240" style="margin-bottom: 10px;"></a>
-                <a href="http://www.camper.com/en_US">
-                <img src="http://webexpedition18.com/wp-content/uploads/2010/09/camper.jpg" height="421" width="240"></a>
-            {% endblock homepage-ads %}
+            {% block latest %} {% include "latest-articles.html" %} {% endblock latest %}
+
+
+        <!-- beginning of latest article testing
+
+            end of latest article testing -->
+
         </div>
+
+
+
         <!-- /.container -->
     </div> <!-- /.row -->
     {% block pinned-stories %}

@@ -1,6 +1,6 @@
 # models featured
 from django.db import models
-
+from django.utils import timezone
 
 # Main stories are the articles (stories) which appear in the Flexslider on the homepage
 class MainStory(models.Model):
@@ -17,7 +17,7 @@ class MainStory(models.Model):
         verbose_name_plural = 'Main stories'
 
 
-# Featured articles are the article from each section which appear either at the top of the section page or
+# Featured articles are the articles from each section which appear either at the top of the section page or
 # in the sections display on the homepage. There should only ever be one instance of this model for each section.
 # TODO: look into the Django models.clean() method for enforcing only one instance of this model
 # TODO: (ie) http://stackoverflow.com/questions/2138408/limit-number-of-model-instances-to-be-created-django
@@ -40,3 +40,17 @@ class PinnedArticle(models.Model):
 
     class Meta:
         ordering = ['order']
+
+''' this is not needed. solution is in articles/models
+# Latest articles are the most recent few articles. This will be automated as they will be showing
+# the "latest" articles. No need for editing them.
+class LatestArticle(models.Model):
+    article = models.ForeignKey('articles.Article', related_name='+', limit_choices_to={'ready': True})
+    # article = models.objects.all().order_by('date_published')[:3]
+    publish_date = models.DateTimeField('date published')
+
+
+#    article_text = models.CharField(max_length=200)
+ #   def __str__(self):
+  #      return self.article_text
+'''
