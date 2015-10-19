@@ -10,8 +10,7 @@
 .thumbnail-featured {
     height: 200px;
     width: 200px;
-    /*border: 1px solid #ddd;
-    border-radius: 4px;*/
+    object-fit: cover;
 }
 
 .thumbnail {

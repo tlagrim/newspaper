@@ -9,15 +9,19 @@
         </div>
         <div class="media-body">
             <a href="articles/{{ article.url }}">
-                <h2 class="media-heading">{{ article.title }}</h2>
+                <h3 class="media-heading">{{ article.title }}</h3>
             </a>
-            <a href="/{{ section.url }}">
-                <h4>{{ section.name }}</h4>
-            </a>
+
+
+                <!-- TODO figure out how to iterate through the authors field, manytomany -->
+                {% for contributor in article.authors.all %}
+                <p><a href="/{{ section.url }}">{{ section.name }}</a> |
+                    <a href="/contributors/{{ contributor.twitter }}">{{ contributor }}</a> </p>
+                    {% endfor %}
+
 			  <p>{{article.preview}}</p>
-			  <!-- TODO figure out how to iterate through the authors field, manytomany -->
-			  <p>By 'Author name'</p>
         </div>
     </div>
 </div>
 {% endfor %}
+
