@@ -89,6 +89,7 @@ div.main-feature-box {
     line-height: 20px;
 }
 
+
 /*!
  * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -135,7 +136,7 @@ body h2, h3, h4{
 
 .line {
     padding-top: 20px;
-  //  white-space: no-wrap;
+    white-space: nowrap;
     overflow: hidden;
     text-align: center;
     text-color: #000000;
