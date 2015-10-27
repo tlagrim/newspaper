@@ -3,36 +3,56 @@
 {% block page %}
 
 
-    <div class="row">
+    <div class="row"> <!-- level 1 -->
         <div class="container-fluid">
             {% block main_stories %}{% include "main-stories.html" %}{% endblock main_stories %}
         </div>
-    </div>
+    </div> <!-- end level 1 -->
 
-    <div class="row">
-        <div class="container-fluid col-md-6">
+    <div class="row"> <!-- level 1 -->
+        <div class="container-fluid col-md-9 right-border"> <!-- level 2 -->
             <!--h4 class="latest-articles-title">Sections</h4-->
-            {% block featured %}{% include "featured-articles.html" %}{% endblock featured %}
-        </div>
+            <div class="row"> <!-- level 3 -->
+                <div class="container-fluid col-md-8">
+                    {% block featured %}
+                        {% include "featured-articles.html" %}
+                    {% endblock featured %}
+                </div>
 
-        <div class="container-fluid col-md-3">
-            {% block twitter-feed %}
-                <a class="twitter-timeline" href="https://twitter.com/hashtag/StarWarsVII" data-widget-id="656289122311495681">#StarWarsVII Tweets</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            {% endblock twitter-feed %}
-        </div>
 
-        <div class="container-fluid col-md-3">
-        <h4 class="latest-articles-title">Latest Views</h4>
-            {% block latest %} {% include "latest-articles.html" %} {% endblock latest %}
-        <!--topper radio image and link-->
-            <a href="http://topperradio.weebly.com/"><img alt="topperradio" src="../static/media/photos/topperradio.png" style="width: 100%; float: left; margin-top: 15px" /></a>
-        </div> <!-- /.container -->
+                <div class="container-fluid col-md-4">
+                    {% block twitter-feed %}
+                        <a class="twitter-timeline" href="https://twitter.com/search?q=Pakistan" data-widget-id="659044419530690560" data-chrome="nofooter noheader">
+                            Tweets about Pakistan
+                        </a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    {% endblock twitter-feed %}
+                </div>
+            </div> <!-- end level 3 -->
+
+            <div class="row top-space"> <!--  level 3 -->
+                {% block pinned-stories %}
+                    {% include "pinned-articles.html" %}
+                {% endblock pinned-stories %}
+            </div> <!-- end level 3 -->
+
+        </div> <!-- end level 2 -->
+
+        <div class="container-fluid col-md-3"> <!-- level 2 -->
+                <h4 class="latest-articles-title">
+                    Latest Views
+                </h4>
+
+                {% block latest %}
+                    {% include "latest-articles.html" %}
+                {% endblock latest %}
+                <!--topper radio image and link-->
+                <a href="http://topperradio.weebly.com/">
+                    <img alt="topperradio" src="../static/media/photos/topperradio.png" style="width: 100%; float: left; margin-top: 15px" />
+                </a>
+        </div> <!-- /.container --> <!-- end level 2 -->
+
+
     </div> <!-- /.row -->
 
-    <div class="row">
-    {% block pinned-stories %}
-        {% include "pinned-articles.html" %}
-    {% endblock pinned-stories %}
-    </div>
 
 {% endblock page %}

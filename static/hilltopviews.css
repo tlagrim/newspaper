@@ -1,3 +1,15 @@
+.top-space {
+    padding-top: 10px;
+}
+
+.left-border {
+  border-left: 1px solid #DDD;
+}
+
+.right-border {
+  border-right: 1px solid #DDD;
+}
+
 .latest-articles-title {
     letter-spacing: 1px;
     background-color: #000000;/*
@@ -8,6 +20,12 @@
 }
 
 .thumbnail-featured {
+    height: 230px;
+    width: 230px;
+    object-fit: cover;
+}
+
+.thumbnail-pinned {
     height: 200px;
     width: 200px;
     object-fit: cover;
