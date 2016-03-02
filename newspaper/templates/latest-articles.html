@@ -1,0 +1,13 @@
+<!-- added this for homepage latest article ticker-->
+{% for article in latest_articles %}
+<div class="media panel panel-default">
+    <div class="panel-body">
+        <div class="media-body">
+            <p>{{ article.section }} | {{article.publish_date}}</p>
+            <a href="articles/{{ article.url }}">
+                <h4>{{ article.title }}</h4>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

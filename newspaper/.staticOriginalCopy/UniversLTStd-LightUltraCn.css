@@ -1,0 +1,14 @@
+@font-face {
+    font-family:'UniversLTStd-LightUltraCn_gdi';
+    src: url('fonts/UniversLTStd-LightUltraCn_gdi.eot');
+    src: url('fonts/UniversLTStd-LightUltraCn_gdi.eot') format('embedded-opentype'),
+    url('fonts/UniversLTStd-LightUltraCn_gdi.woff') format('woff'),
+    url('fonts/UniversLTStd-LightUltraCn_gdi.ttf') format('truetype'),
+    url('fonts/UniversLTStd-LightUltraCn_gdi.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: ultra-condensed;
+    unicode-range: U+0020-25CA;
+}
+
+

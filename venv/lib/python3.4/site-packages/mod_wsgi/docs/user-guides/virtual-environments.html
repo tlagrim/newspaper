@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtual Environments &mdash; mod_wsgi 4.4.22 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="mod_wsgi 4.4.22 documentation" href="../index.html"/>
+        <link rel="up" title="User Guides" href="../user-guides.html"/>
+        <link rel="next" title="Access Control Mechanisms" href="access-control-mechanisms.html"/>
+        <link rel="prev" title="Reloading Source Code" href="reloading-source-code.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> mod_wsgi</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project-status.html">Project Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-issues.html">Security Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user-guides.html">User Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick-installation-guide.html">Quick Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-configuration-guide.html">Quick Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration-guidelines.html">Configuration Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-issues.html">Installation Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration-issues.html">Configuration Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-issues.html">Application Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frequently-asked-questions.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checking-your-installation.html">Checking Your Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-techniques.html">Debugging Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processes-and-threading.html">Processes And Threading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading-source-code.html">Reloading Source Code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access-control-mechanisms.html">Access Control Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-wrapper-extension.html">File Wrapper Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registering-cleanup-code.html">Registering Cleanup Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assorted-tips-and-tricks.html">Assorted Tips And Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues-with-pickle-module.html">Issues With Pickle Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues-with-expat-library.html">Issues With Expat Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAcceptMutex.html">WSGIAcceptMutex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAccessScript.html">WSGIAccessScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIApplicationGroup.html">WSGIApplicationGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAuthGroupScript.html">WSGIAuthGroupScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAuthUserScript.html">WSGIAuthUserScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGICallableObject.html">WSGICallableObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGICaseSensitivity.html">WSGICaseSensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIDaemonProcess.html">WSGIDaemonProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIImportScript.html">WSGIImportScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGILazyInitialization.html">WSGILazyInitialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPassAuthorization.html">WSGIPassAuthorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIProcessGroup.html">WSGIProcessGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonEggs.html">WSGIPythonEggs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonHome.html">WSGIPythonHome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonOptimize.html">WSGIPythonOptimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonPath.html">WSGIPythonPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictEmbedded.html">WSGIRestrictEmbedded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictProcess.html">WSGIRestrictProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictSignal.html">WSGIRestrictSignal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictStdin.html">WSGIRestrictStdin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictStdout.html">WSGIRestrictStdout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptAlias.html">WSGIScriptAlias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptAliasMatch.html">WSGIScriptAliasMatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptReloading.html">WSGIScriptReloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGISocketPrefix.html">WSGISocketPrefix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../finding-help.html">Finding Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reporting-bugs.html">Reporting Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-to-make-a-donation">How to make a donation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-else-can-you-donate">How else can you donate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-are-donations-used">How are donations used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#source-code-contributions">Source code contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#open-source-free-loaders">Open Source free loaders</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../source-code.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.22.html">Version 4.4.22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.21.html">Version 4.4.21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.20.html">Version 4.4.20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.19.html">Version 4.4.19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.18.html">Version 4.4.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.17.html">Version 4.4.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.16.html">Version 4.4.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.15.html">Version 4.4.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.14.html">Version 4.4.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.13.html">Version 4.4.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.12.html">Version 4.4.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.11.html">Version 4.4.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.10.html">Version 4.4.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.9.html">Version 4.4.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.8.html">Version 4.4.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.7.html">Version 4.4.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.6.html">Version 4.4.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.5.html">Version 4.4.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.4.html">Version 4.4.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.3.html">Version 4.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.2.html">Version 4.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.1.html">Version 4.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.4.0.html">Version 4.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.3.2.html">Version 4.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.3.1.html">Version 4.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.3.0.html">Version 4.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.8.html">Version 4.2.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.7.html">Version 4.2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.6.html">Version 4.2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.5.html">Version 4.2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.4.html">Version 4.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.3.html">Version 4.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.2.html">Version 4.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.1.html">Version 4.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.2.0.html">Version 4.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.1.3.html">Version 4.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.1.2.html">Version 4.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.1.1.html">Version 4.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.1.0.html">Version 4.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-4.0.html">Version 4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.5.html">Version 3.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.4.html">Version 3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.3.html">Version 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.2.html">Version 3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.1.html">Version 3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-3.0.html">Version 3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.8.html">Version 2.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.7.html">Version 2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.6.html">Version 2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.5.html">Version 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.4.html">Version 2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.3.html">Version 2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.2.html">Version 2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.1.html">Version 2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-2.0.html">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.6.html">Version 1.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.5.html">Version 1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.4.html">Version 1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.3.html">Version 1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.2.html">Version 1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.1.html">Version 1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/version-1.0.html">Version 1.0</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">mod_wsgi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../user-guides.html">User Guides</a> &raquo;</li>
+      
+    <li>Virtual Environments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/user-guides/virtual-environments.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="virtual-environments">
+<h1>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h1>
+<p>This document contains information about how to make use of Python virtual
+environments such as created by Ian Bicking&#8217;s virtualenv with mod_wsgi.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://pypi.python.org/pypi/virtualenv">http://pypi.python.org/pypi/virtualenv</a></li>
+</ul>
+</div></blockquote>
+<p>The purpose of such Python virtual environments is to allow one to create
+multiple distinct Python environments for the same version of Python, but
+with different sets of Python modules and packages installed into the
+Python &#8216;site-packages&#8217; directory.</p>
+<p>A virtual Python environment is useful where it is necessary to run
+multiple WSGI applications which have conflicting requirements as to what
+version of a Python module or package needs to be installed. They can also
+be used where Apache and daemon mode of mod_wsgi is used to host WSGI
+applications for different users and each user wants to be able to
+separately install their own Python modules and packages.</p>
+<p>Note that aspects of the configuration described here will not work if
+mod_python is being loaded into Apache at the same time as mod_wsgi. This
+is because mod_python will in that case be responsible for initialising the
+Python interpreter, thereby overriding what mod_wsgi is trying to do. For
+best results, you should therefore use only mod_wsgi and not try and use
+mod_python on the same server at the same time.</p>
+<div class="section" id="baseline-environment">
+<h2>Baseline Environment<a class="headerlink" href="#baseline-environment" title="Permalink to this headline">¶</a></h2>
+<p>The first step in using virtual environments with mod_wsgi is to point
+mod_wsgi at a baseline Python environment. This step is actually optional
+and if not done the main Python installation for the system, usually that
+which mod_wsgi was compiled for, would be used as the baseline environment.</p>
+<p>Although the main Python installation can be used, especially in a shared
+environment where daemon mode of mod_wsgi is used to host WSGI applications
+for different users, it is better to make the baseline environment a virgin
+environment with an effectively empty &#8216;site-packages&#8217; directory. This way
+there is no possibility of conflicts between modules and packages in a users
+individual Python virtual environment and the baseline environment.</p>
+<p>To create a virgin environment using the &#8216;virtualenv&#8217; program, the
+&#8216;&#8211;no-site-packages&#8217; option should be supplied when creating the environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd /usr/local/pythonenv
+
+$ virtualenv --no-site-packages BASELINE
+New python executable in BASELINE/bin/python
+Installing setuptools............done.
+</pre></div>
+</div>
+<p>Note that the version of Python from which this baseline environment is
+created must be the same version of Python that mod_wsgi was compiled for.
+It is not possible to mix environments based on different major/minor
+versions of Python.</p>
+<p>Once the baseline Python environment has been created, the WSGIPythonHome
+directive should be defined within the global part of the main Apache
+configuration files. The directive should refer to the top level directory
+for the baseline environment created by the &#8216;virtualenv&#8217; script:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">WSGIPythonHome</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pythonenv</span><span class="o">/</span><span class="n">BASELINE</span>
+</pre></div>
+</div>
+<p>This Python environment will now be used as the baseline environment for
+all WSGI applications running under mod_wsgi, whether they be run in
+embedded mode or daemon mode.</p>
+<p>There is no need to set the WSGIPythonHome directive if you want to use
+the main Python installation as the baseline environment.</p>
+</div>
+<div class="section" id="application-environments">
+<h2>Application Environments<a class="headerlink" href="#application-environments" title="Permalink to this headline">¶</a></h2>
+<p>If for a specific WSGI application you have created a dedicated virtual
+environment, then this environment can now be overlayed on top of the
+baseline environment. If the baseline environment was a virgin environment,
+this virtual environment should also be initially created as a virgin
+environment.</p>
+<p>For example, to create a virtual environment dedicated to developing Pylons
+applications the following would be used:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ virtualenv --no-site-packages PYLONS-1
+New python executable in
+PYLONS-1/bin/python
+Installing setuptools............done.
+
+$ source PYLONS-1/bin/activate
+
+(PYLONS-1)$ easy_install Pylons
+Searching for Pylons
+.......
+</pre></div>
+</div>
+<p>The Pylons instructions for creating a Pylons application would then be
+followed and the application tested using the Pylons inbuilt web server.</p>
+<p>As an additional step however, the WSGI script file described in the
+instructions would be modified to overlay the virtual environment for the
+application on top of the baseline environment. This would be done by
+adding at the very start of the WSGI script file the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">site</span>
+<span class="n">site</span><span class="o">.</span><span class="n">addsitedir</span><span class="p">(</span><span class="s">&#39;/usr/local/pythonenv/PYLONS-1/lib/python2.5/site-packages&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that in this case the full path to the &#8216;site-packages&#8217; directory for
+the virtual environment needs to be specified and not just the root of
+the virtual environment.</p>
+<p>Using &#8216;site.addsitedir()&#8217; is a bit different to simply adding the directory
+to &#8216;sys.path&#8217; as the function will open up any &#8216;.pth&#8217; files located in the
+directory and process them. This is necessary to ensure that any special
+directories related to Python eggs are automatically added to &#8216;sys.path&#8217;.</p>
+<p>Note that although virtualenv includes the script &#8216;activate_this.py&#8217;, which
+the virtualenv documentation claims should be invoked using &#8216;execfile()&#8217; in
+the context of mod_wsgi, you may want to be cautious using it. This is
+because the script modifies &#8216;sys.prefix&#8217; which may actually cause problems
+with the operation of mod_wsgi or Python modules already loaded into the
+Python interpreter, if the code is dependent on the value of &#8216;sys.prefix&#8217;
+not changing. The WSGIPythonHome directive already described should instead
+be used if wanting to associate Python as a whole with the virtual
+environment.</p>
+<p>Despite that, the &#8216;activate_this.py&#8217; script is an attempt to resolve an
+issue with how &#8216;site.addsitedir()&#8217; works. That is that any new directories
+which are added to &#8216;sys.path&#8217; by &#8216;site.addsitedir()&#8217; are actually appended
+to the end. The problem with this in the context of mod_wsgi is that if
+WSGIPythonHome was not used to associate mod_wsgi with a virgin baseline
+environment, then any packages/modules in the main Python installation will
+still take precedence over those in the virtual environment.</p>
+<p>To work around this problem, what &#8216;activate_this.py&#8217; does is invoke
+&#8216;site.addsitedir()&#8217; but then also reorders &#8216;sys.path&#8217; so any newly added
+directories are shifted to the front of &#8216;sys.path&#8217;. This will then ensure
+that where there are different versions of packages in the virtual environment
+that they take precedence over those in the main Python installation.</p>
+<p>As explained, because &#8216;activate_this.py&#8217; is doing other things which may
+not be appropriate in the context of mod_wsgi, if unable to set WSGIPythonHome
+to point mod_wsgi at a virgin baseline environment, instead of just calling
+&#8216;site.addsitedir()&#8217; you should use the code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ALLDIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;usr/local/pythonenv/PYLONS-1/lib/python2.5/site-packages&#39;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">site</span>
+
+<span class="c"># Remember original sys.path.</span>
+<span class="n">prev_sys_path</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+<span class="c"># Add each new site-packages directory.</span>
+<span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">ALLDIRS</span><span class="p">:</span>
+  <span class="n">site</span><span class="o">.</span><span class="n">addsitedir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+<span class="c"># Reorder sys.path so new directories at the front.</span>
+<span class="n">new_sys_path</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prev_sys_path</span><span class="p">:</span>
+        <span class="n">new_sys_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">[:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_sys_path</span>
+</pre></div>
+</div>
+<p>If you still want to use the activation script from virtualenv, then use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">activate_this</span> <span class="o">=</span> <span class="s">&#39;/usr/local/pythonenv/PYLONS-1/bin/activate_this.py&#39;</span>
+<span class="nb">execfile</span><span class="p">(</span><span class="n">activate_this</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">__file__</span><span class="o">=</span><span class="n">activate_this</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If the fact that &#8216;sys.prefix&#8217; has been modified doesn&#8217;t give an issue, then
+great. If you see subtle unexplained problems that may be linked to the
+change to &#8216;sys.prefix&#8217;, then use the more long handed approach above whereby
+&#8216;site.addsitedir()&#8217; is used directly and &#8216;sys.path&#8217; reorderd subsequently.</p>
+</div>
+<div class="section" id="process-environments">
+<h2>Process Environments<a class="headerlink" href="#process-environments" title="Permalink to this headline">¶</a></h2>
+<p>When &#8216;site.addsitedir()&#8217; is used from a WSGI script file to overlay a
+virtual environment on top of the baseline environment, it is only applied
+to the specific Python interpreter instance that the application has been
+delegated to run in. This means that WSGI applications running in the same
+process but within different Python interpreter instances can use different
+virtual environments.</p>
+<p>At the same time though, if needing all WSGI applications running in the
+same process but within different Python interpreters, to use the same
+virtual environment, you would need to setup &#8216;sys.path&#8217; in the WSGI script
+file for all applications.</p>
+<p>Alternatively, if using mod_wsgi 2.0 and embedded mode, the WSGIPythonPath
+directive can be used to setup the virtual environment for all Python
+interpreters created within the process in one step:</p>
+<div class="highlight-python"><div class="highlight"><pre>WSGIPythonPath /usr/local/pythonenv/PYLONS-1/lib/python2.5/site-packages
+</pre></div>
+</div>
+<p>Similarly, if using mod_wsgi 2.0 or later and daemon mode, the
+&#8216;python-path&#8217; option to the WSGIDaemonProcess directive can be used to
+setup the virtual environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>WSGIDaemonProcess pylons \
+ python-path=/usr/local/pythonenv/PYLONS-1/lib/python2.5/site-packages
+</pre></div>
+</div>
+<p>Note that WSGIPythonPath does not have this effect for mod_wsgi prior to
+version 2.0. This is because in older versions WSGIPythonPath merely added
+any listed directories to &#8216;sys.path&#8217;, whereas in mod_wsgi 2.0 and later it
+calls &#8216;site.addsitedir()&#8217; for each listed directory.</p>
+<p>Do note though that all mod_wsgi 2.X versions prior to mod_wsgi 2.4 do not
+perform the reordering of &#8216;sys.path&#8217; as explained previously, when using
+WSGIPythonPath directive or &#8216;python-path&#8217; option for WSGIDaemonProcess.
+Thus, you would need to be using WSGIPythonHome to reference a virgin
+baseline environment when using mod_wsgi 2.3 or earlier if the standard
+Python site-packages directory has conflicting packages. For mod_wsgi 2.4
+onwards this is not an issue and a virtual environments site-packages will
+always override that in standard Python installation.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="access-control-mechanisms.html" class="btn btn-neutral float-right" title="Access Control Mechanisms"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reloading-source-code.html" class="btn btn-neutral" title="Reloading Source Code"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016, Graham Dumpleton.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.4.22',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

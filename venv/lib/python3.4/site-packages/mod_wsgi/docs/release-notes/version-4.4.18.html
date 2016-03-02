@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Version 4.4.18 &mdash; mod_wsgi 4.4.22 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="mod_wsgi 4.4.22 documentation" href="../index.html"/>
+        <link rel="up" title="Release Notes" href="../release-notes.html"/>
+        <link rel="next" title="Version 4.4.17" href="version-4.4.17.html"/>
+        <link rel="prev" title="Version 4.4.19" href="version-4.4.19.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> mod_wsgi</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project-status.html">Project Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-issues.html">Security Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guides.html">User Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/quick-installation-guide.html">Quick Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/quick-configuration-guide.html">Quick Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/configuration-guidelines.html">Configuration Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/installation-issues.html">Installation Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/configuration-issues.html">Configuration Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/application-issues.html">Application Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/frequently-asked-questions.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/checking-your-installation.html">Checking Your Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/debugging-techniques.html">Debugging Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/processes-and-threading.html">Processes And Threading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/reloading-source-code.html">Reloading Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/virtual-environments.html">Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/access-control-mechanisms.html">Access Control Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/file-wrapper-extension.html">File Wrapper Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/registering-cleanup-code.html">Registering Cleanup Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/assorted-tips-and-tricks.html">Assorted Tips And Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/issues-with-pickle-module.html">Issues With Pickle Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guides/issues-with-expat-library.html">Issues With Expat Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAcceptMutex.html">WSGIAcceptMutex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAccessScript.html">WSGIAccessScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIApplicationGroup.html">WSGIApplicationGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAuthGroupScript.html">WSGIAuthGroupScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIAuthUserScript.html">WSGIAuthUserScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGICallableObject.html">WSGICallableObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGICaseSensitivity.html">WSGICaseSensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIDaemonProcess.html">WSGIDaemonProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIImportScript.html">WSGIImportScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGILazyInitialization.html">WSGILazyInitialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPassAuthorization.html">WSGIPassAuthorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIProcessGroup.html">WSGIProcessGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonEggs.html">WSGIPythonEggs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonHome.html">WSGIPythonHome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonOptimize.html">WSGIPythonOptimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIPythonPath.html">WSGIPythonPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictEmbedded.html">WSGIRestrictEmbedded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictProcess.html">WSGIRestrictProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictSignal.html">WSGIRestrictSignal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictStdin.html">WSGIRestrictStdin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIRestrictStdout.html">WSGIRestrictStdout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptAlias.html">WSGIScriptAlias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptAliasMatch.html">WSGIScriptAliasMatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGIScriptReloading.html">WSGIScriptReloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration-directives/WSGISocketPrefix.html">WSGISocketPrefix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../finding-help.html">Finding Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reporting-bugs.html">Reporting Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-to-make-a-donation">How to make a donation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-else-can-you-donate">How else can you donate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-are-donations-used">How are donations used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#source-code-contributions">Source code contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#open-source-free-loaders">Open Source free loaders</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../source-code.html">Source Code</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../release-notes.html">Release Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.22.html">Version 4.4.22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.21.html">Version 4.4.21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.20.html">Version 4.4.20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.19.html">Version 4.4.19</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Version 4.4.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.17.html">Version 4.4.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.16.html">Version 4.4.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.15.html">Version 4.4.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.14.html">Version 4.4.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.13.html">Version 4.4.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.12.html">Version 4.4.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.11.html">Version 4.4.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.10.html">Version 4.4.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.9.html">Version 4.4.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.8.html">Version 4.4.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.7.html">Version 4.4.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.6.html">Version 4.4.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.5.html">Version 4.4.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.4.html">Version 4.4.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.3.html">Version 4.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.2.html">Version 4.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.1.html">Version 4.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.4.0.html">Version 4.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.3.2.html">Version 4.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.3.1.html">Version 4.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.3.0.html">Version 4.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.8.html">Version 4.2.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.7.html">Version 4.2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.6.html">Version 4.2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.5.html">Version 4.2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.4.html">Version 4.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.3.html">Version 4.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.2.html">Version 4.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.1.html">Version 4.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.2.0.html">Version 4.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.1.3.html">Version 4.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.1.2.html">Version 4.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.1.1.html">Version 4.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.1.0.html">Version 4.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-4.0.html">Version 4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.5.html">Version 3.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.4.html">Version 3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.3.html">Version 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.2.html">Version 3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.1.html">Version 3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-3.0.html">Version 3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.8.html">Version 2.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.7.html">Version 2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.6.html">Version 2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.5.html">Version 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.4.html">Version 2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.3.html">Version 2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.2.html">Version 2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.1.html">Version 2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-2.0.html">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.6.html">Version 1.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.5.html">Version 1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.4.html">Version 1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.3.html">Version 1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.2.html">Version 1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.1.html">Version 1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-1.0.html">Version 1.0</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">mod_wsgi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../release-notes.html">Release Notes</a> &raquo;</li>
+      
+    <li>Version 4.4.18</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/release-notes/version-4.4.18.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="version-4-4-18">
+<h1>Version 4.4.18<a class="headerlink" href="#version-4-4-18" title="Permalink to this headline">¶</a></h1>
+<p>Version 4.4.18 of mod_wsgi can be obtained from:</p>
+<blockquote>
+<div><a class="reference external" href="https://codeload.github.com/GrahamDumpleton/mod_wsgi/tar.gz/4.4.18">https://codeload.github.com/GrahamDumpleton/mod_wsgi/tar.gz/4.4.18</a></div></blockquote>
+<p>For details on the availability of Windows binaries see:</p>
+<blockquote>
+<div><a class="reference external" href="https://github.com/GrahamDumpleton/mod_wsgi/tree/master/win32">https://github.com/GrahamDumpleton/mod_wsgi/tree/master/win32</a></div></blockquote>
+<div class="section" id="bugs-fixed">
+<h2>Bugs Fixed<a class="headerlink" href="#bugs-fixed" title="Permalink to this headline">¶</a></h2>
+<p>1. If <tt class="docutils literal"><span class="pre">mod_wsgi-express</span></tt> was run under a user ID for which there was no
+password entry in the system password file, it would fail when looking up
+the group name. If this occurs now use <tt class="docutils literal"><span class="pre">#nnn</span></tt> as the default group name,
+where <tt class="docutils literal"><span class="pre">nnn</span></tt> is the user ID.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="version-4.4.17.html" class="btn btn-neutral float-right" title="Version 4.4.17"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="version-4.4.19.html" class="btn btn-neutral" title="Version 4.4.19"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016, Graham Dumpleton.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.4.22',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

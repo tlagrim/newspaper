@@ -1,0 +1,356 @@
+.top-space {
+    padding-top: 10px;
+}
+
+.left-border {
+  border-left: 1px solid #DDD;
+}
+
+.right-border {
+  border-right: 1px solid #DDD;
+}
+
+.latest-articles-title {
+    letter-spacing: 1px;
+    background-color: #000000;/*
+    text-transform: uppercase;*/
+    padding: 7px 0 5px 10px;
+    font-size: 18px;
+    color: #9d9d9d;
+}
+
+.thumbnail-featured {
+    height: 230px;
+    width: 230px;
+    object-fit: cover;
+}
+
+.thumbnail-pinned {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.thumbnail {
+    height: 100px;
+    width: auto;
+}
+
+div.main-feature-box {
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+#wrapper {
+    max-width: 1024px;
+    margin: 0px auto;
+}
+
+
+#masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 80px;
+}
+
+#nav.affix .thumbnail-featured {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.thumbnail {
+    height: 100px;
+    width: auto;
+}
+
+div.main-feature-box {
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar-brand-hill {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    background-color:#FAFAFA;
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-bottom:0; /* Keeps footer at bottom of screen*/
+    padding-right:0;
+    padding-left:0;
+    overflow-x:hidden;
+}
+
+
+
+body h2, h3, h4{
+        color: grey;
+        }
+
+.content{
+        margin-bottom:2%;
+}
+
+.wide {
+    width: 100%;
+    height: 200px;
+   /* background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=efd922a208&view=fimg&th=14c04701ac43f497&attid=0.1&disp=inline&realattid=f_i73hpr3r0&safe=1&attbid=ANGjdJ8IvV7GPEFZtdQOW5VmBXeQzxUoCyBnDORaasSK4j_honx-TGgFkhYUniuTWJJaSrAH-a_VEUjDIrqfFQbsvXzFIvnaohRdvIjonFr29tLlkT-q_hJw0N6a04c&ats=1426003611157&rm=14c04701ac43f497&zw&sz=w1250-h509");*/
+    background-size: cover;
+}
+
+.wide img {
+    width: 100%;
+}
+
+.logo {
+    color: #000000;
+    font-weight: 800;
+    font-size: 14pt;
+    padding: 5px;
+    text-align: center;
+}
+
+.line {
+    padding-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-color: #000000;
+
+}
+
+.footer{
+   overflow-x: hidden;
+   bottom:0;
+   width:100%;
+}
+
+        body h2, h3, h4{
+        color: grey;
+        }
+
+
+
+        .content{
+        margin-bottom:2%;
+        }
+
+
+        .top-footer{
+        border-top: 1px solid black;
+        width: 100%;
+        margin: auto;
+        background: rgb(245,246,246); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgb(245,246,246) 0%, rgb(219,220,226) 21%, rgb(184,186,198) 49%, rgb(221,223,227) 80%, rgb(245,246,246) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(245,246,246)), color-stop(21%,rgb(219,220,226)), color-stop(49%,rgb(184,186,198)), color-stop(80%,rgb(221,223,227)), color-stop(100%,rgb(245,246,246))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgb(245,246,246) 0%,rgb(219,220,226) 21%,rgb(184,186,198) 49%,rgb(221,223,227) 80%,rgb(245,246,246) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgb(245,246,246) 0%,rgb(219,220,226) 21%,rgb(184,186,198) 49%,rgb(221,223,227) 80%,rgb(245,246,246) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgb(245,246,246) 0%,rgb(219,220,226) 21%,rgb(184,186,198) 49%,rgb(221,223,227) 80%,rgb(245,246,246) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgb(245,246,246) 0%,rgb(219,220,226) 21%,rgb(184,186,198) 49%,rgb(221,223,227) 80%,rgb(245,246,246) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f5f6f6", endColorstr="#f5f6f6",GradientType=0 ); /* IE6-9 */
+
+        }
+
+.img{
+margin-left: 10%;
+}
+
+                .top-footer a{
+                color: #000000;
+                font-weight: bold;
+                text-decoration: none;
+                font-family:Tahoma;
+        }
+
+                .top-footer ul{
+                text-align:center;
+
+                margin-left: 10%;
+
+        }
+        .bottom-footer ul{
+        text-align:center;
+        margin-left: 10%;
+        }
+
+
+
+
+        .bottom-footer{
+        border: 1px solid black;
+        background: #959595; /* Old browsers */
+        background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#959595), color-stop(46%,#0d0d0d), color-stop(50%,#010101), color-stop(53%,#0a0a0a), color-stop(76%,#4e4e4e), color-stop(87%,#383838), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#959595", endColorstr="#1b1b1b",GradientType=0 ); /* IE6-9 */
+        width: 100%;
+        margin: auto;
+        }
+
+        .bottom-footer a{
+        color:#FFFFFF;
+        font-weight: bold;
+        text-decoration: none;
+        font-family:Tahoma;
+        }
+        /*
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}**/
+
+.navbar-brand-hill {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    background-color:#FAFAFA;
+    padding-top: 0px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+
+
+body h2, h3, h4{
+        color: grey;
+        }
+
+.content{
+        margin-bottom:2%;
+}
+
+.wide {
+    width: 100%;
+    height: 120px;
+   /* background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=efd922a208&view=fimg&th=14c04701ac43f497&attid=0.1&disp=inline&realattid=f_i73hpr3r0&safe=1&attbid=ANGjdJ8IvV7GPEFZtdQOW5VmBXeQzxUoCyBnDORaasSK4j_honx-TGgFkhYUniuTWJJaSrAH-a_VEUjDIrqfFQbsvXzFIvnaohRdvIjonFr29tLlkT-q_hJw0N6a04c&ats=1426003611157&rm=14c04701ac43f497&zw&sz=w1250-h509");*/
+    background-size: cover;
+}
+
+
+
+.wide img {
+    width: 100%;
+}
+
+.logo {
+    color: #000000;
+    font-weight: 800;
+    font-size: 14pt;
+    padding: 5px;
+    text-align: center;
+}
+
+.line {
+    padding-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-color: #000000;
+
+}
+
+        .top-footer
+        {
+        margin: auto;
+        }
+
+
+
+                .top-footer a{
+
+                color: #000000;
+                font-weight: bold;
+                text-decoration: none;
+                font-family:Tahoma;
+
+        }
+
+                .top-footer ul{
+                text-align:center;
+
+
+        }
+        .bottom-footer ul{
+        text-align:center;
+
+        }
+
+
+
+
+        .bottom-footer{
+        border: 1px solid black;
+        background: #959595; /* Old browsers */
+        background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#959595), color-stop(46%,#0d0d0d), color-stop(50%,#010101), color-stop(53%,#0a0a0a), color-stop(76%,#4e4e4e), color-stop(87%,#383838), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+
+        width: 80%;
+        margin: auto;
+        }
+
+        .bottom-footer a{
+        color:#FFFFFF;
+        font-weight: bold;
+        text-decoration: none;
+        font-family:Tahoma;
+        }

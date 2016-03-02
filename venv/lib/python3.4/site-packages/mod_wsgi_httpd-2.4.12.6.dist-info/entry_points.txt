@@ -1,0 +1,3 @@
+[console_scripts]
+mod_wsgi-apxs = mod_wsgi_packages.apxs.__main__:main
+
